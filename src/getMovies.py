@@ -98,7 +98,7 @@ def main(args):
     
     for dicio in categories_dic:
         with open('../categories/'+ dicio +'/movies.json', 'w') as outfile:
-            json.dump(categories_dic[categories_dic], outfile)
+            json.dump(categories_dic[dicio], outfile)
 
 
 
