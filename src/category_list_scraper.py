@@ -19,7 +19,7 @@ class MovieListSpider(scrapy.Spider):
         for anode in sidebar.css('ul.quicklinks li.subnav_item_main'):
             link = anode.css('a::attr(href)').extract_first()
             category= anode.xpath('a/text()')
-            createCategoryAndFile('categories/'+ letters(str(category.extract_first())), self.name +link)
+            createCategoryAndFile('../categories/'+ letters(str(category.extract_first())), self.name +link)
 
 
 def letters(input):

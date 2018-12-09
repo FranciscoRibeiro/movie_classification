@@ -15,11 +15,17 @@ class MovieListSpider(scrapy.Spider):
         yield scrapy.Request(url, self.parse)
 
     def parse(self, response):
-        sidebar = response.xpath('//div[@id="sidebar"]')
-        for anode in sidebar.css('ul.quicklinks li.subnav_item_main'):
-            link = anode.css('a::attr(href)').extract_first()
-            category= anode.xpath('a/text()')
-            createCategoryAndFile('categories/'+ letters(str(category.extract_first())), self.name +link)
+        main = response.xpath('//div[@id="titleStoryLine"]')
+        desc = main.css('div.canwrap p span::text').extract_first()
+        print(desc)
+
+        #for anode in main.css('div.article div.list div.lister-item'):
+            #link = anode.css('a::attr(href)').extract_first()
+            #category= anode.xpath('a/text()')
+           # link = anode.css('div.lister-item-image a::attr(href)').extract_first()
+           # title = anode.css('div.lister-item-image img::attr(alt)').extract_first()
+           #"" print (title +"|" +self.name+ link)
+            #createCategoryAndFile('categories/'+ letters(str(category.extract_first())), self.name +link)
 
 
 def letters(input):

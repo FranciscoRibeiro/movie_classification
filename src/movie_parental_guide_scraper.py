@@ -15,11 +15,21 @@ class MovieListSpider(scrapy.Spider):
         yield scrapy.Request(url, self.parse)
 
     def parse(self, response):
-        sidebar = response.xpath('//div[@id="sidebar"]')
-        for anode in sidebar.css('ul.quicklinks li.subnav_item_main'):
-            link = anode.css('a::attr(href)').extract_first()
-            category= anode.xpath('a/text()')
-            createCategoryAndFile('categories/'+ letters(str(category.extract_first())), self.name +link)
+        dic = {}
+        secs = response.css('section.article section')
+        for section in secs:
+            tab= section.css('h4.ipl-list-title::text')
+            degree=section.css('li.advisory-severity-vote span.ipl-status-pill::text')
+            #print( str(tab.extract_first()) + " | " + str(degree.extract_first()))
+            key= str(tab.extract_first())
+            value = str(degree.extract_first())
+            if letters(key) in dic:
+                if value != 'None' and value!= None :
+                    dic[letters(key)]= value
+            else:
+                dic[letters(key)]= value
+        for x in dic:
+            print(x+"|"+dic[x])
 
 
 def letters(input):
