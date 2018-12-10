@@ -6,56 +6,36 @@
 <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
 </config>
 <config key="model">
-<config key="Path_Internals">
+<config key="Document Column_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_string"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
-<entry key="Path" type="xstring" value="/home/kiko/MAPI/KDD/kdd_text_mining/movie_classification/categories/Action/moviesDescriptions"/>
-<config key="Rec_Internals">
+<entry key="Document Column" type="xstring" value="Preprocessed Document"/>
+<config key="Preprocess Unmodifiable_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
-<entry key="Rec" type="xboolean" value="false"/>
-<config key="Cat_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="Cat" type="xstring" value="action"/>
-<config key="Source_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="Source" type="xstring" value=""/>
-<config key="Type_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="Type" type="xstring" value="UNKNOWN"/>
-<config key="IgnoreHiddenFiles_Internals">
+<entry key="Preprocess Unmodifiable" type="xboolean" value="false"/>
+<config key="Replace Document_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
-<entry key="IgnoreHiddenFiles" type="xboolean" value="true"/>
-<config key="Charset_Internals">
+<entry key="Replace Document" type="xboolean" value="true"/>
+<config key="New Document Column Name_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="false"/>
+</config>
+<entry key="New Document Column Name" type="xstring" value="Preprocessed Document"/>
+<config key="filteringMode_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_string"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
-<entry key="Charset" type="xstring" value="UTF-8"/>
-<config key="Filepath as title_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="Filepath as title" type="xboolean" value="false"/>
-<config key="WordTokenizer_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="WordTokenizer" type="xstring" value="OpenNLP English WordTokenizer"/>
+<entry key="filteringMode" type="xstring" value="Filter terms representing numbers"/>
 </config>
 <entry key="customDescription" type="xstring" isnull="true" value=""/>
 <entry key="state" type="xstring" value="EXECUTED"/>
-<entry key="factory" type="xstring" value="org.knime.ext.textprocessing.nodes.source.parser.flatfile.FlatFileDocumentParserNodeFactory"/>
-<entry key="node-name" type="xstring" value="Flat File Document Parser"/>
+<entry key="factory" type="xstring" value="org.knime.ext.textprocessing.nodes.preprocessing.numberfilter.NumberFilterNodeFactory2"/>
+<entry key="node-name" type="xstring" value="Number Filter"/>
 <entry key="node-bundle-name" type="xstring" value="KNIME Textprocessing Plug-in"/>
 <entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.ext.textprocessing"/>
 <entry key="node-bundle-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
@@ -65,7 +45,7 @@
 <entry key="node-feature-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
 <entry key="node-feature-version" type="xstring" value="3.7.0.v201811291424"/>
 <config key="factory_settings"/>
-<entry key="name" type="xstring" value="Flat File Document Parser"/>
+<entry key="name" type="xstring" value="Number Filter"/>
 <entry key="hasContent" type="xboolean" value="true"/>
 <entry key="isInactive" type="xboolean" value="false"/>
 <config key="ports">
@@ -73,12 +53,12 @@
 <entry key="index" type="xint" value="1"/>
 <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
 <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
-<entry key="port_object_summary" type="xstring" value="Rows: 50, Cols: 1"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 98, Cols: 2"/>
 <entry key="port_dir_location" type="xstring" value="port_1"/>
 </config>
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" value="filestore"/>
-<entry key="file_store_id" type="xstring" value="5595c4ee-11bd-476b-89e9-710f20c3d4b4"/>
+<entry key="file_store_id" type="xstring" value="2c19b9b8-943c-46cc-8f13-98a167ffccbb"/>
 </config>
 </config>
