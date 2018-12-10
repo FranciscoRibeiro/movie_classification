@@ -10,7 +10,7 @@
 <entry key="SettingsModelID" type="xstring" value="SMID_string"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
-<entry key="Path" type="xstring" value="/home/kiko/MAPI/KDD/kdd_text_mining/movie_classification/categories/Action/moviesDescriptions"/>
+<entry key="Path" type="xstring" value="/home/kiko/MAPI/KDD/kdd_text_mining/movie_classification/categories/Western/moviesDescriptions"/>
 <config key="Rec_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
@@ -20,7 +20,7 @@
 <entry key="SettingsModelID" type="xstring" value="SMID_string"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
-<entry key="Cat" type="xstring" value="action"/>
+<entry key="Cat" type="xstring" value="western"/>
 <config key="Source_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_string"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
@@ -73,12 +73,12 @@
 <entry key="index" type="xint" value="1"/>
 <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
 <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
-<entry key="port_object_summary" type="xstring" value="Rows: 50, Cols: 1"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 48, Cols: 1"/>
 <entry key="port_dir_location" type="xstring" value="port_1"/>
 </config>
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" value="filestore"/>
-<entry key="file_store_id" type="xstring" value="5595c4ee-11bd-476b-89e9-710f20c3d4b4"/>
+<entry key="file_store_id" type="xstring" value="5284cc2a-922f-410a-9362-a812535a436c"/>
 </config>
 </config>

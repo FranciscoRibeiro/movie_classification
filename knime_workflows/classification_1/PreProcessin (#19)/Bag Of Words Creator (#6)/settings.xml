@@ -6,56 +6,53 @@
 <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
 </config>
 <config key="model">
-<config key="Path_Internals">
+<config key="DocumentColumn_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_string"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
-<entry key="Path" type="xstring" value="/home/kiko/MAPI/KDD/kdd_text_mining/movie_classification/categories/Action/moviesDescriptions"/>
-<config key="Rec_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="Rec" type="xboolean" value="false"/>
-<config key="Cat_Internals">
+<entry key="DocumentColumn" type="xstring" value="Preprocessed Document"/>
+<config key="TermColumn_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_string"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
-<entry key="Cat" type="xstring" value="action"/>
-<config key="Source_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="TermColumn" type="xstring" value="Term"/>
+<config key="ColumnFilter_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_columnfilter"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
-<entry key="Source" type="xstring" value=""/>
-<config key="Type_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
+<config key="ColumnFilter">
+<entry key="filter-type" type="xstring" value="STANDARD"/>
+<config key="included_names">
+<entry key="array-size" type="xint" value="1"/>
+<entry key="0" type="xstring" value="Preprocessed Document"/>
 </config>
-<entry key="Type" type="xstring" value="UNKNOWN"/>
-<config key="IgnoreHiddenFiles_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
+<config key="excluded_names">
+<entry key="array-size" type="xint" value="1"/>
+<entry key="0" type="xstring" value="Document"/>
 </config>
-<entry key="IgnoreHiddenFiles" type="xboolean" value="true"/>
-<config key="Charset_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
+<entry key="enforce_option" type="xstring" value="EnforceExclusion"/>
+<config key="name_pattern">
+<entry key="pattern" type="xstring" value=""/>
+<entry key="type" type="xstring" value="Wildcard"/>
+<entry key="caseSensitive" type="xboolean" value="true"/>
 </config>
-<entry key="Charset" type="xstring" value="UTF-8"/>
-<config key="Filepath as title_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
+<config key="datatype">
+<config key="typelist">
+<entry key="org.knime.ext.textprocessing.data.DocumentValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.BooleanValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.IntValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.DoubleValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.LongValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.StringValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.date.DateAndTimeValue" type="xboolean" value="false"/>
 </config>
-<entry key="Filepath as title" type="xboolean" value="false"/>
-<config key="WordTokenizer_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
-<entry key="WordTokenizer" type="xstring" value="OpenNLP English WordTokenizer"/>
+</config>
 </config>
 <entry key="customDescription" type="xstring" isnull="true" value=""/>
 <entry key="state" type="xstring" value="EXECUTED"/>
-<entry key="factory" type="xstring" value="org.knime.ext.textprocessing.nodes.source.parser.flatfile.FlatFileDocumentParserNodeFactory"/>
-<entry key="node-name" type="xstring" value="Flat File Document Parser"/>
+<entry key="factory" type="xstring" value="org.knime.ext.textprocessing.nodes.transformation.bow.BagOfWordsNodeFactory2"/>
+<entry key="node-name" type="xstring" value="Bag Of Words Creator"/>
 <entry key="node-bundle-name" type="xstring" value="KNIME Textprocessing Plug-in"/>
 <entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.ext.textprocessing"/>
 <entry key="node-bundle-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
@@ -65,7 +62,7 @@
 <entry key="node-feature-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
 <entry key="node-feature-version" type="xstring" value="3.7.0.v201811291424"/>
 <config key="factory_settings"/>
-<entry key="name" type="xstring" value="Flat File Document Parser"/>
+<entry key="name" type="xstring" value="Bag Of Words Creator"/>
 <entry key="hasContent" type="xboolean" value="true"/>
 <entry key="isInactive" type="xboolean" value="false"/>
 <config key="ports">
@@ -73,12 +70,12 @@
 <entry key="index" type="xint" value="1"/>
 <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
 <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
-<entry key="port_object_summary" type="xstring" value="Rows: 50, Cols: 1"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 3305, Cols: 2"/>
 <entry key="port_dir_location" type="xstring" value="port_1"/>
 </config>
 </config>
 <config key="filestores">
-<entry key="file_store_location" type="xstring" value="filestore"/>
-<entry key="file_store_id" type="xstring" value="5595c4ee-11bd-476b-89e9-710f20c3d4b4"/>
+<entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" value="42a82154-7b31-4b26-a29a-38640acf6d34"/>
 </config>
 </config>
