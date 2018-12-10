@@ -120,6 +120,9 @@ def main(args):
                 data = json.load(f)
             print ( "A categoria " + category +" tem " + str(len(data)) +" filmes")
             for key in data:
+                real_movie_url=key['link'].replace("?ref_=adv_li_i","")
+                movie_parental_guide_url = "https://www.imdb.com"+real_movie_url +"parentalguide"
+                print (movie_parental_guide_url)
                 if movieExists(key['title']):
                     print("Ja existe. Prooooximo!")
                     continue
@@ -130,7 +133,6 @@ def main(args):
                 movie_desc = getMovieInfo("https://www.imdb.com"+real_movie_url)
                 movie_dic['movie_desc'] = movie_desc
                 #print (movie_desc)
-                movie_parental_guide_url = real_movie_url +"parentalguide"
                 parental_dic = getMovieParentalInfo(movie_parental_guide_url)
                 movie_dic['movie_parental_guide'] = parental_dic
                 categories_dic[category][key['title']] = movie_dic
