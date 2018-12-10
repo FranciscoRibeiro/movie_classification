@@ -24,11 +24,15 @@ def createMovieDescFile(folder_name,movie_name,movie_desc):
     f.close()
 
 
-
-for file in find('movies.json', '../categories/'):
-	#print (file)
-	with open(file ) as f:
-		data = json.load(f)
+def function():
+	for file in find('movies.json', '../categories/'):
+		with open(file ) as f:
+			data = json.load(f)
 		for x in data:
-			#pprint(data[x]['movie_desc'])
-			createMovieDescFile((str(file)).replace("movies.json","")+"moviesDescriptions/", str(x), str(data[x]['movie_desc']) )
+			createMovieDescFile((str(file)).replace("movies.json","")+"moviesDescriptions/", str(x).encode('utf-8'), str(data[x]['movie_desc']) )
+
+
+#function()
+
+
+#movieExists("12 Angry Men")

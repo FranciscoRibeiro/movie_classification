@@ -6,13 +6,24 @@ import scrapy
 
 class MovieListSpider(scrapy.Spider):
     name = 'https://www.imdb.com'
+    custom_settings = {
+        'CONCURRENT_REQUESTS': '1',
+    }
+
+    def __init__(self, category=None, *args, **kwargs):
+        super(MovieListSpider, self).__init__(*args, **kwargs)
+        self.start_urls = ['http://www.example.com/categories/%s' % category]
+        self.category=category
+        # ...
+
 
     def start_requests(self):
-        url = ''
-        tag = getattr(self, 'url', None)
-        if tag is not None:
-            url = tag
-        yield scrapy.Request(url, self.parse)
+        #url = ''
+        #tag = getattr(self, 'url', None)
+        #if tag is not None:
+        #    url = tag
+        #yield scrapy.Request(url, self.parse)
+        yield scrapy.Request('https://www.imdb.com/search/title?genres=%s' % self.category, self.parse)
 
     def parse(self, response):
         movies_list_wrapper = response.xpath('//div[@id="main"]')
@@ -21,7 +32,11 @@ class MovieListSpider(scrapy.Spider):
             #category= anode.xpath('a/text()')
             link = anode.css('div.lister-item-image a::attr(href)').extract_first()
             title = anode.css('div.lister-item-image img::attr(alt)').extract_first()
-            print (title +"|" +self.name+ link)
+            yield {
+             'title' : title,
+             'link' : link
+            }
+
             #createCategoryAndFile('categories/'+ letters(str(category.extract_first())), self.name +link)
 
 
@@ -39,3 +54,5 @@ def createCategoryAndFile(category_name,link):
     f = open(filename,append_write)
     f.write( link)
     f.close()
+
+
